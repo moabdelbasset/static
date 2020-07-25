@@ -18,19 +18,5 @@ pipeline {
 
       }
     }
-
-    stage('Validate deployment') {
-      steps {
-        sh '''
-                    response=$(curl -s -o /dev/null -w "%{http_code}
-" https://mohamed-project3.s3-us-west-2.amazonaws.com//)
-                    if [ "$response" != "200" ]
-                    then
-                        exit 1
-                    fi
-                '''
-      }
-    }
-
   }
 }
