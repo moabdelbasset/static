@@ -9,7 +9,7 @@ pipeline {
 
     stage('Upload to AWS') {
       steps {
-        withAWS(credentials: 'M0h123@@@') {
+        withAWS(credentials: 'aws-static') {
           retry(count: 2) {
             s3Upload(bucket: 'mohamed-project3', includePathPattern: '*.html')
           }
