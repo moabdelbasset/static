@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Upload to AWS ') {
             steps {
-                withAWS(credentials:'aws-static') {
+                withAWS(credentials:'M0h123aym') {
                     retry(2) {
                         s3Upload(bucket:"mohamed-project3", path:'', includePathPattern:'*.html')
                     }
